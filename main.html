@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+    <div class="parent">
+        <div class="left">
+            <div class="out">
+                <div class="out-bor" style="box-shadow: 1px 1px 1px #e70b0b;">
+                    <div class="inner">
+                        <div class="inner-cir"></div>
+                    </div>
+                </div>
+            </div>
+                <div class="content">
+                <span id="f1">Led Lights</span>
+                <p class="f2">Lights Enlights Our Life</p>
+            </div>
+        </div>
+        <div class="right">
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    const fullCircle = document.querySelector('.out-bor');
+    fullCircle.addEventListener('mousemove', e => {
+        shadowX = e.layerX - e.layerX / 1.01;
+        shadowY = e.layerY - e.layerY / 1.01;
+        fullCircle.style.setProperty('box-shadow', `${shadowX}px ${shadowY}px 1px #e70b0b`);
+    })
+</script>
+
+</html>
