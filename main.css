@@ -28,11 +28,11 @@ ul{
 	width: 30rem;
 	height: 30rem;
 	border-radius: 50%;
-	box-shadow: -5px 3px 10px #efefef;
-	transform: translate3d(0,0,0) rotate(0deg);
+	box-shadow: inset -5px -5px 10px #efefef;
+	transform: translate3d(0,0,0);
 }
 .small{
 	width: 10rem;
 	height: 10rem;
-	box-shadow: 5px 3px 10px #efefef;
+	box-shadow: 5px -5px 10px #efefef;
 }
