@@ -17,6 +17,7 @@ body{
 .parent{
 	display: flex;
 	height: 100vh;
+	background-color: #ebebeb;
 }
 .inner-center{
 	display: flex;
@@ -29,18 +30,37 @@ body{
 .right{
 	flex-basis: 10%;
 	min-width: 200px;
+<<<<<<< HEAD
 }
 .circle{
 	width: 30rem;
 	height: 30rem;
 	border-radius: 50%;
 	box-shadow: inset 0px 5px 18px var(--shadow-color);
+=======
+	min-height: 200px;
+}
+.big{
+	background-color: #ebebeb
+}
+.inner-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.circle{
+	width: 35rem;
+	height: 35rem;
+	border-radius: 50%;
+	box-shadow: inset -5px -5px 10px #d9d9d9;
+>>>>>>> addd21ac23adc636f1c4633215f30880bd87c8b9
 	transform: translate3d(0,0,0);
 	background-color: var(--circle-color);
 	transition: all 0.5s ease;
 	transition-property: opacity;
 }
 .small{
+<<<<<<< HEAD
 	width: 12rem;
 	height: 12rem;
 	box-shadow: 5px 0px 18px var(--shadow-color);
@@ -48,4 +68,24 @@ body{
 }
 .hide{
 	opacity: 0.1;
+=======
+	width: 14rem;
+	height: 14rem;
+	box-shadow: 5px -5px 10px #d9d9d9;
+	background-color: #ebebeb;
+}
+.small:hover{
+	transform: scale(2.5);
+	box-shadow: none;
+}
+.content{
+	position: absolute;
+	top: 44%;
+	left: 40%;
+}
+.content p{
+	color: rgb(173, 173, 173);
+	font-size: 18px;
+	font-family: Graphik Web,Futura,Helvetica,sans-serif;
+>>>>>>> addd21ac23adc636f1c4633215f30880bd87c8b9
 }
