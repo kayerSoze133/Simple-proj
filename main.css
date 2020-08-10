@@ -2,17 +2,23 @@
     margin: 0%;
 	padding: 0%;
 }
-
 ul{
 	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: black;
 }
 :root{
 	--page-color : #ebebeb;
 	--circle-color : #e7e7e7;
 	--shadow-color : #cacaca;
 }
+
+
+/* homepage starts */
+
 .parent{
-	display: flex;
 	height: 100vh;
 	background-color: var(--page-color);
 }
@@ -21,26 +27,16 @@ ul{
 	justify-content: center;
 	align-items: center;
 }
-.left{
-	flex-basis: 90%;
-}
-.right{
-	flex-basis: 10%;
-	min-width: 200px;
-}
 .circle{
 	width: 30rem;
 	height: 30rem;
 	border-radius: 50%;
-	box-shadow: inset 0px 5px 18px var(--shadow-color);
 	background-color: var(--circle-color);
+}
+.big{
+	box-shadow: inset 0px 5px 18px var(--shadow-color);
 	transition: all 0.5s ease;
 	transition-property: opacity;
-}
-.inner-center{
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 .small{
 	width: 12rem;
@@ -51,15 +47,76 @@ ul{
 .hide{
 	opacity: 0.1;
 }
-.content{
+
+/* homepage ends */
+
+/* spacial classes */
+.centre-circle{
+	box-shadow: none;
+	background-color: var(--page-color)
+}
+
+/* --------------- */
+
+/* navigation starts */
+
+.navigation{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: var(--page-color);
+}
+.absolutely-centered{
 	position: absolute;
-	transform-origin: 0% 50%;
 	top: 50%;
 	left: 50%;
-	transform: translate(-30%,-50%);
+	transform: translate(-50%,-50%);
+	z-index: 3;
 }
-.content p{
-	color: var(--shadow-color);
-	font-size: 18px;
-	font-family: Graphik Web,Futura,Helvetica,sans-serif;
+.carousal-text-wrapper{
+	position: absolute;
+	display: flex;
+	overflow: hidden;
+	height: 100%;
+	left: 50%;
 }
+.carousal-text{
+	flex : 1;
+	z-index: 4;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* initial translate */
+	transform: translateY(35%);
+	transition: transform 0.5s ease-in-out;
+}
+.text{
+	flex: 1;
+	font-family: sans-serif;
+	line-height: 1.6rem;
+	/* following two properties because we want text to be left aligned and stacked */
+	flex-direction: column;
+	align-items: flex-start;
+}
+.image{
+	transition: opacity 0.5s ease-in-out;
+	opacity: 0;
+}
+.image:nth-child(1){
+	background-color: red;
+}
+.image:nth-child(2){
+	background-color: green;
+}
+.image:nth-child(3){
+	background-color: blue;
+}
+.selected{
+	opacity: 1;
+}
+
+.hide-navigation{
+	width: 0;
+	overflow: hidden;
+}
+/* navigation end */
