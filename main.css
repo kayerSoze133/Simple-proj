@@ -9,6 +9,7 @@ ul{
 .parent{
 	display: flex;
 	height: 100vh;
+	background-color: #ebebeb;
 }
 .left{
 	flex-basis: 90%;
@@ -19,20 +20,38 @@ ul{
 	min-width: 200px;
 	min-height: 200px;
 }
+.big{
+	background-color: #ebebeb
+}
 .inner-center{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .circle{
-	width: 40rem;
-	height: 40rem;
+	width: 35rem;
+	height: 35rem;
 	border-radius: 50%;
-	box-shadow: inset -5px -5px 10px #efefef;
+	box-shadow: inset -5px -5px 10px #d9d9d9;
 	transform: translate3d(0,0,0);
 }
 .small{
-	width: 10rem;
-	height: 10rem;
-	box-shadow: 5px -5px 10px #efefef;
+	width: 14rem;
+	height: 14rem;
+	box-shadow: 5px -5px 10px #d9d9d9;
+	background-color: #ebebeb;
+}
+.small:hover{
+	transform: scale(2.5);
+	box-shadow: none;
+}
+.content{
+	position: absolute;
+	top: 44%;
+	left: 40%;
+}
+.content p{
+	color: rgb(173, 173, 173);
+	font-size: 18px;
+	font-family: Graphik Web,Futura,Helvetica,sans-serif;
 }
