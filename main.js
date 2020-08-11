@@ -25,6 +25,7 @@ function toggleNav (e) {
 	toggleStyleProperty(document.documentElement,'--text-color','black','#ebebeb');
 	toggleStyleProperty(outCircle,'visibility','visible','hidden');
 	navigation.classList.toggle('navigation-on');
+	(this.textContent == 'Menu') ? this.textContent = 'Close' : this.textContent = 'Menu';
 }
 
 function adjustAngle (x,y,angle) {
