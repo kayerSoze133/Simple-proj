@@ -1,0 +1,27 @@
+@media (max-width: 1024px){
+	.circle{--big-circle-size: 15rem;}
+	.small{--small-circle-size: 5rem;}
+	.having-text{--text-size: 14px;}
+	.main{
+		display: flex;
+		flex-direction: column;
+	}
+	.centre-circle{
+		box-shadow: none;
+		background-color: var(--page-color)
+	}
+	.text-content{
+		position: static !important;
+		transform: none;
+		margin-top: 20px;
+	}
+	.menu > *{transform: none; padding: 0;}
+	.menu{
+		transform: none;
+		top: auto;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 50px;
+	}
+}

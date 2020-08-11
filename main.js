@@ -10,6 +10,8 @@ let counter = 0;
 const nav_btn = document.querySelector('.menu-btn');
 const navigation = document.querySelector('.navigation');
 
+let xDown = null;
+let yDown = null;
 
 
 function toggleStyleProperty(element,property,val,newVal){
@@ -23,8 +25,9 @@ function toggleNav (e) {
 	// for navigation
 	toggleStyleProperty(document.documentElement,'--page-color','#ebebeb','black');
 	toggleStyleProperty(document.documentElement,'--text-color','black','#ebebeb');
-	toggleStyleProperty(outCircle,'visibility','visible','hidden');
+	toggleStyleProperty(outCircle.parentElement,'visibility','visible','hidden');
 	navigation.classList.toggle('navigation-on');
+
 	(this.textContent == 'Menu') ? this.textContent = 'Close' : this.textContent = 'Menu';
 }
 
@@ -107,6 +110,43 @@ function moveCarousalWithWheel(e){
 
 }
 
+function handleTouchStart(evt) {                                         
+    xDown = evt.touches[0].clientX;                                      
+    yDown = evt.touches[0].clientY;                                      
+}; 
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+    let xUp = evt.touches[0].clientX;                                    
+    let yUp = evt.touches[0].clientY;
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+        /* left swipe */ 
+        } else {
+        /* right swipe */
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+        	console.log('up swipe');
+        	if (counter < 2)
+        		counter++;
+        } else { 
+        	console.log('down swipe');
+        	if (counter > 0)
+        		counter--;
+        }
+        slide(counter);                                                
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
+
 nav_btn.addEventListener('click',toggleNav);
 
 outCircle.addEventListener('mousemove',rotate);
@@ -115,3 +155,6 @@ inCircle.addEventListener('mouseout',hide);
 
 window.addEventListener('keyup',moveCarousalWithKeys);
 window.addEventListener('wheel',moveCarousalWithWheel);
+
+navigation.addEventListener('touchstart', handleTouchStart, false);        
+navigation.addEventListener('touchmove', handleTouchMove, false);

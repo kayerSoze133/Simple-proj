@@ -14,11 +14,13 @@ a{
 	--circle-color : #e7e7e7;
 	--shadow-color : #cacaca;
 	--text-color : black;
+	--big-circle-size: 30rem;
+	--small-circle-size: 12rem;
+	--text-size: 18px;
 }
 
 
 /* homepage starts */
-
 .parent{
 	height: 100vh;
 	background-color: var(--page-color);
@@ -29,8 +31,8 @@ a{
 	align-items: center;
 }
 .circle{
-	width: 30rem;
-	height: 30rem;
+	width: var(--big-circle-size);
+	height: var(--big-circle-size);
 	border-radius: 50%;
 	background-color: var(--circle-color);
 }
@@ -40,13 +42,21 @@ a{
 	transition-property: opacity;
 }
 .small{
-	width: 12rem;
-	height: 12rem;
+	width: var(--small-circle-size);
+	height: var(--small-circle-size);
 	box-shadow: 5px 0px 18px var(--shadow-color);
 	background-color: var(--page-color);
 }
 .hide{
 	opacity: 0.1;
+}
+
+.text-content{
+	min-width: 432px;
+	left: calc(50% + 216px) !important;
+}
+.text-content p {
+	line-height: 1.3rem;
 }
 
 /* homepage ends */
@@ -55,6 +65,9 @@ a{
 .centre-circle{
 	box-shadow: none;
 	background-color: var(--page-color)
+}
+.having-text{
+	font-size: var(--text-size);
 }
 
 /* --------------- */
@@ -94,7 +107,6 @@ a{
 }
 .text{
 	flex: 1;
-	font-family: sans-serif;
 	line-height: 1.6rem;
 	/* following two properties because we want text to be left aligned and stacked */
 	flex-direction: column;
@@ -102,6 +114,7 @@ a{
 	color: var(--text-color);
 }
 .image{
+	position: absolute;
 	transition: opacity 0.5s ease-in-out;
 	opacity: 0;
 }
