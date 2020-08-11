@@ -13,6 +13,7 @@ a{
 	--page-color : #ebebeb;
 	--circle-color : #e7e7e7;
 	--shadow-color : #cacaca;
+	--text-color : black;
 }
 
 
@@ -63,8 +64,9 @@ a{
 .navigation{
 	position: fixed;
 	height: 100%;
-	width: 100%;
+	width: 0;
 	background-color: var(--page-color);
+	overflow: hidden;
 }
 .absolutely-centered{
 	position: absolute;
@@ -97,6 +99,7 @@ a{
 	/* following two properties because we want text to be left aligned and stacked */
 	flex-direction: column;
 	align-items: flex-start;
+	color: var(--text-color);
 }
 .image{
 	transition: opacity 0.5s ease-in-out;
@@ -114,9 +117,28 @@ a{
 .selected{
 	opacity: 1;
 }
-
 .hide-navigation{
 	width: 0;
 	overflow: hidden;
 }
+.navigation-on{
+	width: 100%;
+}
 /* navigation end */
+
+/* menu start */
+.menu{
+	position: absolute;
+	top: 0;
+	right: 5%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.menu-item{
+	padding: 20px 0;
+	transform: rotate(270deg);
+	color: var(--text-color);
+}

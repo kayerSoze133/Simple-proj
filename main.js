@@ -1,15 +1,34 @@
 const outCircle = document.querySelector('.circle.big');
-const inCircle = document.querySelector('.circle.small');
+const inCircle = document.querySelector('.circle.small.logo');
+const mid = outCircle.clientWidth/2;
+
 const carousal = document.querySelector('.carousal');
 const textCarousal = document.querySelector('.carousal-text');
 const items = Array.from(carousal.children);
+let counter = 0;
 
-const mid = outCircle.clientWidth/2;
+const nav_btn = document.querySelector('.menu-btn');
+const navigation = document.querySelector('.navigation');
 
 
+
+function toggleStyleProperty(element,property,val,newVal){
+	const cur = getComputedStyle(element).getPropertyValue(property);
+	console.log(cur,val,newVal);
+	(cur == newVal) ? element.style.setProperty(property,val) : element.style.setProperty(property,newVal);
+}
 function isNegative (number) {return (number < 0) ? true : false;}
 
+function toggleNav (e) {
+	// for navigation
+	toggleStyleProperty(document.documentElement,'--page-color','#ebebeb','black');
+	toggleStyleProperty(document.documentElement,'--text-color','black','#ebebeb');
+	toggleStyleProperty(outCircle,'visibility','visible','hidden');
+	navigation.classList.toggle('navigation-on');
+}
+
 function adjustAngle (x,y,angle) {
+	// to adjust angle according the quadrant
 	if (isNegative(y)){
 		if (isNegative(x))
 			angle = 180 + angle;
@@ -24,6 +43,7 @@ function adjustAngle (x,y,angle) {
 }
 
 function rotate(e) {
+	// rotate the circle accooring to the mouse position
 	if (e.target != e.currentTarget)
 		return;
 
@@ -35,17 +55,18 @@ function rotate(e) {
 	angle = Math.round(angle);
 	angle = adjustAngle(x,y,angle);
 
-	console.log(angle);
+	// console.log(angle);
 	outCircle.style.transform = `translate3d(0,0,0) rotate(${angle}deg)`;
 }
 
 function slide (counter) {
+	// slide the images (colors) accoring to the counter
 	for (let i=0;i<items.length;i++)
 		(i == counter) ? items[i].classList.add('selected') : items[i].classList.remove('selected');
 	slideTextItems(counter);
 }
-
 function slideTextItems (counter) {
+	// slide the text accoring to the counter
 	if (counter == 0)
 		textCarousal.style.transform = `translateY(${35}%)`;
 	else if (counter == 1)
@@ -53,10 +74,8 @@ function slideTextItems (counter) {
 	else if (counter == 2)
 		textCarousal.style.transform = `translateY(-${35}%)`;
 }
-
-let counter = 0;
-
-window.addEventListener('keyup',e => {
+function moveCarousalWithKeys (e) {
+	// adjust the counter based on UP/DOWN arrow keys pressed
 	if (e.keyCode === 38){
 		if (counter > 0)
 			counter -= 1;
@@ -67,8 +86,31 @@ window.addEventListener('keyup',e => {
 	}
 	console.log(counter);
 	slide(counter);
-});
+}
+function hide (e) {
+	// when mouse pointer on the smaller circle, hide the bigger circle.
+	console.log('hide now');
+	outCircle.classList.toggle('hide'); 
+}
+function moveCarousalWithWheel(e){
+	if (e.deltaY < 0){
+		if (counter > 0)
+			counter -= 1;
+	}
+	else if (e.deltaY > 0){
+		if (counter < 2)
+			counter += 1;
+	}
+	console.log(counter);
+	slide(counter);
+
+}
+
+nav_btn.addEventListener('click',toggleNav);
 
 outCircle.addEventListener('mousemove',rotate);
-// inCircle.addEventListener('mouseover', e => outCircle.classList.toggle('hide'));
-// inCircle.addEventListener('mouseout', e => outCircle.classList.toggle('hide'));
+inCircle.addEventListener('mouseover',hide);
+inCircle.addEventListener('mouseout',hide);
+
+window.addEventListener('keyup',moveCarousalWithKeys);
+window.addEventListener('wheel',moveCarousalWithWheel);
