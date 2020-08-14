@@ -73,9 +73,10 @@ a{text-decoration: none;color: black;}
 }
 .small{z-index: 2;}
 .navigation-image{opacity: 0; transition: opacity 0.2s ease}
-.navigation-image:nth-child(1){background-color: red;}
-.navigation-image:nth-child(2){background-color: green;}
-.navigation-image:nth-child(3){background-color: blue;}
+.navigation-image:nth-child(1){background-image: url(/img/led\ light1.jpg);background-position-x: 50%;background-size: cover;}
+.navigation-image:nth-child(2){background-image: url(/img/led\ t-bulb1.webp);background-position-x: 50%;background-size: cover;}
+.navigation-image:nth-child(3){background-image: url(/img/led\ tubelight1.jpg);background-position-x: 50%;background-size: cover;}
+.navigation-image:nth-child(4){background-image: url(/img/led\ panel1.jpg);background-position-x: 50%;background-size: cover;}
 .navigation-texts{
 	position: absolute;
 	left: 50%;
