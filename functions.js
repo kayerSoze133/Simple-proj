@@ -50,7 +50,7 @@ function rotate(e) {
 }
 function slideTextWithWheel(e) {
 	if (e.deltaY > 0){
-		if (counter < 2)
+		if (counter < counterMax)
 			counter++;
 	}
 	else{
@@ -58,12 +58,12 @@ function slideTextWithWheel(e) {
 			counter--;
 	}
 	slideImages(counter);
-	imageTexts.style.transform = `translateY(-${counter*33}%)`;
+	imageTexts.style.transform = `translateY(calc(-${counter*(100/(counterMax+1))}% - 20px))`;
 }
 function slideTextWithKeys(e) {
 	if (e.keyCode == 37){
 		// left
-		if (counter < 2)
+		if (counter < counterMax)
 			counter++;
 	}
 	else if (e.keyCode == 39){
@@ -73,12 +73,20 @@ function slideTextWithKeys(e) {
 	}
 	console.log(counter);
 	slideImages(counter);
-	imageTexts.style.transform = `translateX(calc(-${counter*40}%))`;
+	imageTexts.style.transform = `translateX(calc(-${counter*(100/(counterMax+1))}% - 20px))`;
 }
 function slideImages(counter) {
 	// slide the images (colors) accoring to the counter
+	console.log('sliding...');
 	for (let i=0;i<images.children.length;i++)
-		(i == counter) ? images.children[i].classList.add('selected-image') : images.children[i].classList.remove('selected-image');
+		if (i == counter){
+			images.children[i].classList.add('selected') 
+			imageTexts.children[i].classList.add('selected');
+		}
+		else{
+			images.children[i].classList.remove('selected');
+			imageTexts.children[i].classList.remove('selected');
+		}
 }
 
 let xDown = null;
@@ -100,7 +108,7 @@ function handleTouchMove(evt) {
 
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {/* left swipe */ 
-	    	if (counter < 2)
+	    	if (counter < counterMax)
 	    		counter++;
 	    } 
 		else {/* right swipe */
@@ -109,7 +117,7 @@ function handleTouchMove(evt) {
         		counter--;
         }
         slideImages(counter);                     
-        imageTexts.style.transform = `translateX(calc(-${counter*40}%))`;
+        imageTexts.style.transform = `translateX(calc(-${counter*(100/(counterMax+1))}% - 20px))`;
     }
     /* reset values */
     xDown = null;

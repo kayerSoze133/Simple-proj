@@ -72,7 +72,7 @@ a{text-decoration: none;color: black;}
 	width: 100%;
 }
 .small{z-index: 2;}
-.navigation-image{opacity: 0; transition: opacity 0.2s ease}
+.navigation-image{opacity: 0; transition: opacity 0.2s ease;}
 .navigation-image:nth-child(1){background-image: url(/img/led\ light1.jpg);background-position-x: 50%;background-size: cover;}
 .navigation-image:nth-child(2){background-image: url(/img/led\ t-bulb1.webp);background-position-x: 50%;background-size: cover;}
 .navigation-image:nth-child(3){background-image: url(/img/led\ tubelight1.jpg);background-position-x: 50%;background-size: cover;}
@@ -97,8 +97,10 @@ a{text-decoration: none;color: black;}
 	/*justify-content: center;*/
 	/*align-items: flex-start;*/
 	font-size: var(--text-size);
+	opacity: 0.2;
+	transition: opacity 0.2s ease;
 }
-.selected-image{
+.selected{
 	opacity: 1;
 }
 /* navigation end */
