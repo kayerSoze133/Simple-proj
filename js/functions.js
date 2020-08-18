@@ -58,7 +58,7 @@ function slideTextWithWheel(e) {
 			counter--;
 	}
 	slideImages(counter);
-	imageTexts.style.transform = `translateY(calc(-${counter*(100/(counterMax+1))}% - 20px))`;
+	imageTexts.style.transform = `translateY(calc(-${counter*(100/(counterMax+1))}%))`;
 }
 function slideTextWithKeys(e) {
 	if (e.keyCode == 37){
@@ -73,7 +73,7 @@ function slideTextWithKeys(e) {
 	}
 	console.log(counter);
 	slideImages(counter);
-	imageTexts.style.transform = `translateX(calc(-${counter*(100/(counterMax+1))}% - 20px))`;
+	imageTexts.style.transform = `translateX(calc(-${counter*(100/(counterMax+1))}%))`;
 }
 function slideImages(counter) {
 	// slide the images (colors) accoring to the counter

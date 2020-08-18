@@ -7,7 +7,7 @@ const imageTexts = document.querySelector('.navigation-texts');
 
 let counter = 0;
 // change this according to size of the menu items
-const counterMax = 3; 
+const counterMax = 4; 
 
 const navToggle = document.querySelector('.open-close-btn');
 
