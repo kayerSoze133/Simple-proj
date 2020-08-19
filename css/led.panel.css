@@ -9,22 +9,11 @@ html{scroll-behavior: smooth;}
 	height: 100vh;
 }
 .main{
-    /* background-image: url('/assets/panel/led\ panel3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; */
+    background: url('../assets/panel/led.panel.3.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-.main::before{
-    content: "";
-    position: absolute;
-    background: url('/assets/panel/led\ panel3.jpg') no-repeat center center/cover;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
 }
 .bold{font-weight: bold;}
 .sub-sections{
@@ -39,10 +28,10 @@ html{scroll-behavior: smooth;}
     align-items: center;
     height: 100%;
 }
-[data-bg='green']{background-image: url('/assets/panel/led\ panel1.jpg'); background-size: cover;background-position-x: -100px;}
+[data-bg='green']{background-image: url('../assets/panel/led.panel.1.jpg'); background-repeat: no-repeat; background-position: center;}
 [data-bg='cyan']{background-color: #808145;}
 [data-bg='pink']{background-color: #edc367;}
-[data-bg='yellow']{background-image: url('/assets/panel/led\ panel2.jpg'); background-repeat: no-repeat; background-size: cover;}
+[data-bg='yellow']{background-image: url('../assets/panel/led.panel.2.jpg'); background-repeat: no-repeat; background-position: center;}
 p{
     padding: 10px;
 }

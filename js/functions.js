@@ -7,6 +7,7 @@ function toggleProperty(element,property,val,newVal){
 
 function toggleNav(e) {
 	toggleProperty(document.querySelector('.homepage'),'display','block','none');
+	toggleProperty(document.querySelector('.about-btn'),'display','block','none');
 	navigation.classList.toggle('navigation-on');
 
 	let btnText = this.textContent.toLowerCase();
@@ -123,3 +124,13 @@ function handleTouchMove(evt) {
     xDown = null;
     yDown = null;                                             
 };
+
+function jump_to_about(e){
+	counter = counterMax;
+	slideImages(counter);
+	console.log(window.innerWidth)
+	if (window.innerWidth > 1024)
+		imageTexts.style.transform = `translateY(calc(-${counter*(100/(counterMax+1))}%))`;
+	else
+		imageTexts.style.transform = `translateX(calc(-${counter*(100/(counterMax+1))}% - 20px))`;
+}

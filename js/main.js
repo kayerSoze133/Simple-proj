@@ -10,7 +10,7 @@ let counter = 0;
 const counterMax = 4; 
 
 const navToggle = document.querySelector('.open-close-btn');
-
+const about = document.querySelector('.about-btn');
 
 navToggle.addEventListener('click',toggleNav);
 
@@ -23,3 +23,5 @@ window.addEventListener('keyup',slideTextWithKeys);
 navigation.addEventListener('touchstart', handleTouchStart, false);
 
 navigation.addEventListener('touchmove', handleTouchMove, false);
+
+about.addEventListener('click',jump_to_about);

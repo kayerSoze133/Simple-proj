@@ -9,7 +9,7 @@ html{scroll-behavior: smooth;}
 	height: 100vh;
 }
 .main{
-    background-image: url('/assets/led.bulb.png');
+    background-image: url('../assets/led.bulb.png');
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -29,10 +29,10 @@ html{scroll-behavior: smooth;}
     align-items: center;
     height: 100%;
 }
-[data-bg='green']{background-image: url('/assets/bulb/led.bulb.1.jpg'); background-size: cover;}
+[data-bg='green']{background-image: url('../assets/bulb/led.bulb.1.jpg'); background-size: cover;}
 [data-bg='cyan']{background-color: #808145;}
 [data-bg='pink']{background-color: #edc367;}
-[data-bg='yellow']{background-image: url('/assets/bulb/led.bulb.2.jpg'); background-repeat: no-repeat; background-size: cover;}
+[data-bg='yellow']{background-image: url('../assets/bulb/led.bulb.2.jpg'); background-repeat: no-repeat; background-size: cover;}
 p{
     padding: 10px;
 }

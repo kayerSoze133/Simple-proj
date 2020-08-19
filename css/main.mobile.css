@@ -41,3 +41,8 @@
 		justify-content: flex-end;
 	}
 }
+@media (min-width: 1024px){
+	.circle{--big-circle-size: 520px;}
+	.small{--small-circle-size: 250px;}
+	.having-text{--text-size: 18px;}
+}

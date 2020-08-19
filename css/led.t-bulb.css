@@ -11,17 +11,12 @@ html{scroll-behavior: smooth;}
 .main{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
-}
-.main::before{
-    content: "";
-    position: absolute;
-    background: url('/assets/led-tbulb.jpg') no-repeat center center/cover;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.89;
+    background: url('../assets/led.t.bulb.jpg') no-repeat;
+    background-position: center;
+    background-color: black;
+    color: #f4f4f4;
 }
 .bold{font-weight: bold;}
 .sub-sections{
@@ -36,10 +31,10 @@ html{scroll-behavior: smooth;}
     align-items: center;
     height: 100%;
 }
-[data-bg='green']{background-image: url('/assets/T-bulb/led\ t-bulb2.webp'); background-size: cover;}
+[data-bg='green']{background-image: url('../assets/T-bulb/led.tbulb.2.jpg'); background-size: cover;}
 [data-bg='cyan']{background-color: #808145;}
 [data-bg='pink']{background-color: #edc367;}
-[data-bg='yellow']{background-image: url('/assets/T-bulb/led\ t-bulb1.webp'); background-repeat: no-repeat; background-size: cover;}
+[data-bg='yellow']{background-image: url('../assets/T-bulb/led.tbulb.1.webp'); background-repeat: no-repeat; background-size: cover;}
 p{
     padding: 10px;
 }
