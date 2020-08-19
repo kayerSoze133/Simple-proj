@@ -1,0 +1,45 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+html{scroll-behavior: smooth;}
+.sections-wrapper{overflow: hidden;}
+.section{
+	width: 100%;
+	height: 100vh;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.main::before{
+    content: "";
+    position: absolute;
+    background: url('assets/led.tubelight.jpg') no-repeat center center/cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+}
+.bold{font-weight: bold;}
+.sub-sections{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.sub-section{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+[data-bg='green']{background-image: url('assets/tubelight/led\ tubelight1.jpg'); background-size: cover;}
+[data-bg='cyan']{background-color: #808145;}
+[data-bg='pink']{background-color: #edc367;}
+[data-bg='yellow']{background-image: url('assets/tubelight/led\ tubelight2.jpg'); background-repeat: no-repeat; background-size: cover;}
+p{
+    padding: 10px;
+}
